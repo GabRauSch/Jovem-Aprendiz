@@ -17,4 +17,12 @@ Eu não faço a menor ideia do seu nivel, e isso não é o importante agora, ess
 
 Primeiro, se você não entender de Node, terei de explicar o conceito, e ai podemos baixar tudo e fazer rodar.
 
-O 
+Vamos criar algumas aplicações e resolver alguns bugs (De preferencia utilize aquele momento no senai em que todos estão completamente loucos, falando nada com nada, não existe ordem e o comportamento beira o caos, aqui na Intel realize atividades no portifolio apenas se a demanda estiver baixa)
+
+Aqui vamos testar conceitos de 
+- Authorization
+- API Methods
+- Database Communication
+- Libs e consumo de api's
+- CORS <-- esta desgraça
+- Requisição e assincronismo
