@@ -20,6 +20,9 @@ Primeiro, se você não entender de Node, terei de explicar o conceito, e ai pod
 Vamos criar algumas aplicações e resolver alguns bugs (De preferencia utilize aquele momento no senai em que todos estão completamente loucos, falando nada com nada, não existe ordem e o comportamento beira o caos, aqui na Intel realize atividades no portifolio apenas se a demanda estiver baixa)
 
 Aqui vamos testar conceitos de 
+- ports e endpoints
+- Routes e Controllers
+- registry (package.json)
 - Authorization
 - API Methods
 - Database Communication
