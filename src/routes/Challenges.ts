@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const ChallengeController = require('../controllers/ChallengesController');
 
+
 const router = Router();
 
-router.get('/pages/:id', ChallengeController.loadPage);
+router.get('/challenge/:id', ChallengeController.loadPage);
+router.get('/listChallenges', ChallengeController.listChallenges);
 
 export default router;

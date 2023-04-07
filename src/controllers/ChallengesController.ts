@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import data from '../challenges/c1.json';
+import fs from 'fs-extra';
+import path from 'path'
 
 export const loadPage = (req: Request, res: Response) => {
     let { id }= req.params;
@@ -10,8 +12,8 @@ export const loadPage = (req: Request, res: Response) => {
     let linkAfter;
 
     console.log(data.challenges[parseInt(id)]);
-    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #000;text-decoration: none;" href="/pages/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
-    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #000;text-decoration: none;" href="/pages/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
+    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #000;text-decoration: none;" href="/challenge/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
+    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #000;text-decoration: none;" href="/challenge/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
 
     if(!challenges){
         res.send('Este número de desafio não existe')
@@ -140,10 +142,28 @@ export const loadPage = (req: Request, res: Response) => {
         }))
     </script>
 </body>
-</html>
-    
-    `
+</html>`
 
     res.send(createdHTML);
     return;
+}
+
+export const listChallenges = (req: Request, res: Response) => {
+    let dir = __dirname.replace(/\\/g, '/').replace('controllers', 'challenges');
+
+    let fileContent = fs.readFileSync(dir+ '/c1.json').toString();
+    let jsonFileContent = JSON.parse(fileContent);
+
+    let challenges = jsonFileContent.challenges;
+    let data: object[] = [];
+    
+    challenges.forEach((el: any)=>{
+        data.push({
+            title: el.title,
+            problem: el.problem
+        });
+    });
+
+
+    res.json({data})
 }

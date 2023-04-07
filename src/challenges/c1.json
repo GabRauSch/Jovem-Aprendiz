@@ -64,12 +64,29 @@
         {
             "id": 6,
             "title": "Criando nosso primeiro endpoint",
-            "problem": "Já resolvemos muitas coisas chatas que fazem parte da vida do programador backend. Agora está na hora de começarmos na parte boa da profissão: criar as paradas. Para esse desafio, crie um endpoint que realiza uma chamada na url '/listChallenges'",
+            "problem": "Já resolvemos muitas coisas chatas que fazem parte da vida do programador backend. Agora está na hora de começarmos na parte boa da profissão: criar as paradas. Para esse desafio, crie um endpoint que realiza uma chamada na url '/listChallenges'. Por agora, faça com que o endpoint responda com um json: {res: \"Sua mensagem personalizada aqui\"}",
             "tips": [
-                "Dependência, lembrando, são aquelas bibliotecas que vem com o código pronto para você usar.",
-                "Os types são dependências que são usadas apenas pelo typescript, para te ajudar no desenvolvimento do código. Não faz nenhum sentido mandar para o servidor final esses arquivos.",
-                "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, temos que reposicionar os @types para o seu lugar.",
-                "<div>dentro do arquivo package.json, encontre uma array chamada \"devDependencies\". Dentro dessa array temos listadas as dependencias de desenvolvimento do projeto. Tire a dependência @types/dotenv do dependencies e ponha no devDependencies, ficando assim:</div><i class='codeTitle'>package.json</i><div class='codeHide'>\"devDependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"@types/express\": \"^4.17.17\"<br>}</div>"
+                "Os endpoints devem ficar na pasta routes.",
+                "Você pode utilizar o arquivo Challenges.ts, como o endpoint se trata de um 'listChallenges', não há problemas em usar as rotas de desafio",
+                "Utilize as setinhas que abreviam o código no visual studio para ajudar a desenvolver o código dentro do controller (se for utilizar, claro)",
+                "Crie uma nova rota no Routes que chama pelo método GET o seu endpoint (como é uma listagem, o método adequado é o GET)",
+                
+                "<div>dentro do arquivo routes/Challenges.ts, crie uma função como a seguir: </div><i class='codeTitle'>Challenges.ts</i><div class='codeHide'>router.get('/listChallenges', ChallengeController.listChallenges);</div>",
+                "<div>dentro do arquivo controllers/ChallengesController.ts, crie uma função como a seguir: </div><i class='codeTitle'>ChallengesController.ts</i><div class='codeHide'>export const listChallenges = (req: Request, res: Response) => {<br>res.json({msg: 'Vai começar a ficar dificil pra C***** isso aqui, melhor correr... mas sem pressão!'})<br>}</div>",
+                "Realize a chamada dele no postman com <i>localhost:3000/listChallenges</i>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 7,
+            "title": "Fazendo o endpoint funcionar",
+            "problem": "Esse desafio é o mais dificil até agora, e podemos chamar ele de chefão 1. Porque pqp... basicamente seu papel aqui será o de ler esse arquivo no seu código e listar os titulos e problemas dos desafios na chamada do seu endpoint criado.",
+            "tips": [
+                "utilize a biblioteca fs-extra e seu type @types/fs-extra para realizar a leitura do arquivo (leia a documentação, utilize o chat lgbt ou o que for para aprender a utilizá-la.",
+                "Crie uma nova rota no Routes que chama pelo método GET o seu endpoint (como é uma listagem, o método adequado é o GET)",                
+                "O objeto de resposta pode ser chamado de data, um array que contém objetos com títulos e problemas",
+                "data:[{\"title\":\"tal\", \"problem\":\"problem tal tal\"}]. Seu payload vai ficar assim",
+                "Realize a chamada dele no postman com <i>localhost:3000/listChallenges</i>"
             ],
             "resolved": false
         }
