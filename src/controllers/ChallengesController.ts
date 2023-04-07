@@ -10,8 +10,8 @@ export const loadPage = (req: Request, res: Response) => {
     let linkAfter;
 
     console.log(data.challenges[parseInt(id)]);
-    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #000;text-decoration: none;" href="/pages/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
-    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #000;text-decoration: none;" href="/pages/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
+    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #000;text-decoration: none;" href="/challenge/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
+    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #000;text-decoration: none;" href="/challenge/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
 
     if(!challenges){
         res.send('Este número de desafio não existe')
