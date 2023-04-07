@@ -1,0 +1,79 @@
+{
+    "challenges": [
+        {
+            "id": 1,
+            "title": "Porta errada",
+            "problem": "A porta no nosso servidor está errada! ajeite isso e torne as coisas mais fáceis para a vida dos programadores que vão usar seu código no futuro!",
+            "tips": [
+                "O problema se encontra no server.ts",
+                "Ao fazer o deploy do projeto, a nossa porta pode mudar, temos que arranjar um método para que seja possivel não precisar reescrever nenhum código quando formos por no ar.",
+                "não basta mudar o console log ou a porta para resolver o problema... lembre que se esse problema ocorreu uma vez, algum outro programador pode vir e cometê-lo novamente",
+                "utilize uma biblioteca chamada dotenv, dentro do arquivo, sete a porta para 3000",
+                "<div>dentro do arquivo .env, que deve ficar na raiz do projeto, ponha:</div><i class='codeTitle'>.env</i><div class='codeHide'>PORT=3000</div><div>no seu server.ts escreva:</div><i class='codeTitle'>server.ts</i><div class='codeHide'> import dotenv from 'dotenv';<br>dotenv.config();<br>server.listen(process.env.PORT);</div>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 2,
+            "title": "Repositorio apresenta pasta NodeModules",
+            "problem": "Nosso repositório do GitHub apresenta a pasta NodeModules, que é a pasta com todo o conteúdo de dependencias do nosso node. O problema com isso é que esta pasta é muita pesada e guardar ela no nosso git pode ocasionar alguns problemas. Faça com que nosso repositorio no GIT não contenha mais a nossa pasta pesada node_modules",
+            "tips": [
+                "Faça o git ignorar a pasta",
+                "Crie um arquivo .gitignore",
+                "Referencie a pasta node_modules no arquivo criado",
+                "<div>dentro do arquivo .gitignore, que deve ficar na raiz do projeto, ponha:</div><i class='codeTitle'>.gitignore</i><div class='codeHide'>node_modules</div>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 3,
+            "title": "Estamos usando Typescript",
+            "problem": "Este código está suportando e compilando nosso código em Typescript. Estamos configurando tudo certinho no tsconfig.json, mas o programador que iniciou o projeto se esqueceu disso quando começou a criá-lo, e agora temos que resolver uma de suas prezepadas! No arquivo Challenges.ts, nosso arquivo de rotas temos dois requires sendo usados, vamos fazer um 'import' no lugar",
+            "tips": [
+                "Precisamos importar o Router e o nosso ChallengesController.",
+                "programação se escreve em ingles, e precisamos IMPORTAR o Router DO express bem como IMPORTAR todas as funções e nomear sua raiz ChallengeController do ChallengeController <-- confuso pra caralho, mas é bem simples",
+                "Import {Router} from 'express' e import * as ChallengesController from '../controllers/ChallengesController'",
+                "<div>dentro do arquivo Challenges.ts, que deve ficar na pasta routes do projeto, ponha:</div><i class='codeTitle'>Challenges.ts</i><div class='codeHide'>import {Router} from 'express'<br> import * as ChallengesController from '../challengesController'</div>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 4,
+            "title": "Vamos começar a tornar o negocio mais serio",
+            "problem": "A partir de agora, os desafios incluirão bibliotecas e outras paradas... já utilizamos algumas bilbiotecas, você consegue listar elas? Crie um arquivo de respostas a esse desafio (e pode ser um txt, faça do jeito que preferir) e liste as dependencias que estamos utilizando no código até agr.",
+            "tips": [
+                "Dependência, lembrando, são aquelas bibliotecas que vem com o código pronto para você usar.",
+                "As dependencias estão com seus códigos instalados no Node_modules, porém temos que criar uma referência a elas para que seja possivel instalar elas sem levar o nodemodules ao git.",
+                "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, essa segunda são dependencias que ajudam no desenvolvimento do código, mas para o deploy podem ser \"jogadas fora\"",
+                "<div>dentro do arquivo package.json, encontre uma array chamada \"dependencies\". Dentro dessa array temos listadas as dependencias do projeto. logo abaixo temos as devdependencies </div><i class='codeTitle'>package.json</i><div class='codeHide'>\"dependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"express\": \"^4.18.2\"<br>}</div>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 5,
+            "title": "Tirando onda!",
+            "problem": "Os titulos dos desafios começarão a ficar mais cringe... Mas, vamos resolver um problema com as nossas dependencias. Não podemos ter um type nas nossas dependencias normais do projeto, eles devem ficar no devDependencies.",
+            "tips": [
+                "Dependência, lembrando, são aquelas bibliotecas que vem com o código pronto para você usar.",
+                "Os types são dependências que são usadas apenas pelo typescript, para te ajudar no desenvolvimento do código. Não faz nenhum sentido mandar para o servidor final esses arquivos.",
+                "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, temos que reposicionar os @types para o seu lugar.",
+                "<div>dentro do arquivo package.json, encontre uma array chamada \"devDependencies\". Dentro dessa array temos listadas as dependencias de desenvolvimento do projeto. Tire a dependência @types/dotenv do dependencies e ponha no devDependencies, ficando assim:</div><i class='codeTitle'>package.json</i><div class='codeHide'>\"devDependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"@types/express\": \"^4.17.17\"<br>}</div>"
+            ],
+            "resolved": false
+        },
+        {
+            "id": 6,
+            "title": "Criando nosso primeiro endpoint",
+            "problem": "Já resolvemos muitas coisas chatas que fazem parte da vida do programador backend. Agora está na hora de começarmos na parte boa da profissão: criar as paradas. Para esse desafio, crie um endpoint que realiza uma chamada na url '/listChallenges'",
+            "tips": [
+                "Dependência, lembrando, são aquelas bibliotecas que vem com o código pronto para você usar.",
+                "Os types são dependências que são usadas apenas pelo typescript, para te ajudar no desenvolvimento do código. Não faz nenhum sentido mandar para o servidor final esses arquivos.",
+                "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, temos que reposicionar os @types para o seu lugar.",
+                "<div>dentro do arquivo package.json, encontre uma array chamada \"devDependencies\". Dentro dessa array temos listadas as dependencias de desenvolvimento do projeto. Tire a dependência @types/dotenv do dependencies e ponha no devDependencies, ficando assim:</div><i class='codeTitle'>package.json</i><div class='codeHide'>\"devDependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"@types/express\": \"^4.17.17\"<br>}</div>"
+            ],
+            "resolved": false
+        }
+
+    ]
+
+}

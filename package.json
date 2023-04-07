@@ -1,0 +1,28 @@
+{
+  "name": "ja",
+  "version": "1.0.0",
+  "description": "Esse repositorio vai ajudar a gente a entender alguns conceitos de programação... Como você verá, WSO2 pode ser um pouco duro às vezes, e isso significa que precisamos de maneiras sofisticadas (gambiarras) para um desenvolvimento na area da TI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon ./src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielRaulinoSchoenell/JovemAprendiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielRaulinoSchoenell/JovemAprendiz/issues"
+  },
+  "homepage": "https://github.com/GabrielRaulinoSchoenell/JovemAprendiz#readme",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
+}

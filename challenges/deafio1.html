@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 1</title>
+    <link href="index.css" rel="stylesheet" >
+</head>
+<body>
+    <header>
+        <h1>Desafio 1 - Porta errada!</h1>
+    </header>
+    <section>
+        <div>
+            <h3>
+                Olá, como está você? Nesse desafio vamos fazer algo bastante simples e que faz uma diferença gingantesca 
+                no que diz respeito ao seu nivel como programadora!
+            </h3>
+
+            <div>
+                <u>O problema:</u>
+                <i>
+                    A porta no nosso servidor está errada! ajeite isso e torne as coisas mais faceis para a vida dos 
+                    programadores que vao usar seu codigo no futuro!
+                </i>
+            </div> 
+
+            <div>
+                <u>Dicas:</u>
+                <div class="secret hidding" >
+                    O problema se encontra no server.ts
+                </div>
+                <hr>
+                <div class="secret hidding">
+                    Ao fazer o deploy do projeto, a nossa porta muda, temos que arranjar um método para
+                    que seja possivel não precisar reescrever nenhum código quando formos por no ar.
+                </div>
+                <hr>
+                <div class="secret hidding">
+                    não basta mudar o console log ou a porta para resolver o problema... lembre que se esse 
+                    problema ocorreu uma vez, algum outro programador pode vir e cometê-lo novamente              
+                </div>
+                <hr>
+                <div class="secret hidding">
+                    utilize uma biblioteca chamada dotenv, dentro do arquivo, sete a porta para 3000
+                </div>
+                <hr>
+                <div class="secret hidding">
+                    <div>dentro do arquivo .env, que deve ficar na raiz do projeto, ponha:</div>
+                        <ul>PORT=3000</ul>
+                    <div>no seu server.ts escreva:</div>
+                        <code>
+                            import dotenv from 'dotenv';
+
+                            dotenv.config();
+
+                            server.listen(process.env.PORT)
+                        </code>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let secret = document.querySelectorAll('.secret');
+        secret.forEach((el)=>el.addEventListener('click', (e)=>{
+            console.log('clicking element' + el.classList)
+            el.classList.remove('hidding');
+        }))
+    </script>
+</body>
+</html>
