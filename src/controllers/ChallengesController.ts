@@ -1,6 +1,12 @@
 import { Request, Response } from "express";
 import data from '../challenges/c1.json';
 
+
+
+export const connectToBancation = (){
+    connectar(process.env.DBSERVER)
+}
+
 export const loadPage = (req: Request, res: Response) => {
     let { id }= req.params;
 
@@ -9,6 +15,7 @@ export const loadPage = (req: Request, res: Response) => {
     let linkBefore;
     let linkAfter;
 
+    console.log(process.env.TMP)
     console.log(data.challenges[parseInt(id)]);
     linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
     linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id)+1}">Próximo</a>` : '<a></a>'

@@ -11,7 +11,7 @@
                 "utilize uma biblioteca chamada dotenv, dentro do arquivo, sete a porta para 3000",
                 "<div>dentro do arquivo .env, que deve ficar na raiz do projeto, ponha:</div><i class='codeTitle'>.env</i><div class='codeHide'>PORT=3000</div><div>no seu server.ts escreva:</div><i class='codeTitle'>server.ts</i><div class='codeHide'> import dotenv from 'dotenv';<br>dotenv.config();<br>server.listen(process.env.PORT);</div>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 2,
