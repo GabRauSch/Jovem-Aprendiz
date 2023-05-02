@@ -1,12 +1,10 @@
 import { Request, Response } from "express";
 import data from '../challenges/c1.json';
 
-
-
-export const connectToBancation = (){
-    connectar(process.env.DBSERVER)
+export const listChallenges = (req:Request, res: Response) => {
+    res.json({msg:'Te dei o sol, te dei mar, só falta dar a prata!'});
+    return;
 }
-
 export const loadPage = (req: Request, res: Response) => {
     let { id }= req.params;
 
@@ -21,9 +19,10 @@ export const loadPage = (req: Request, res: Response) => {
     linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
 
     if(!challenges){
-        res.send('Este número de desafio não existe')
+        res.send('Este número de desafio não existe');
         return;
     }
+    console.log('teste');
 
     let tipsDisplay= "";
     

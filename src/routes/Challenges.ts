@@ -5,4 +5,6 @@ const router = Router();
 
 router.get('/challenge/:id', ChallengeController.loadPage);
 
+router.get('/listChallenges', ChallengeController.listChallenges);
+
 export default router;
