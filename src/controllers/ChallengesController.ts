@@ -1,40 +1,56 @@
-import { Request, Response } from "express";
+import { Request, Response } from "express";//Estou importando funções específicas dentro desta biblio.
 import data from '../challenges/c1.json';
+import file from 'fs-extra';//Função que lida com arquivos
+import { sequelize } from "../instances/mysql";
 
-export const listChallenges = (req:Request, res: Response) => {
-    res.json({msg:'Te dei o sol, te dei mar, só falta dar a prata!'});
+export const listChallenges = (req: Request, res: Response) => {
+
+    let path = "C:/Users/ta058594/Documents/aprendendo ;)/teste/src";
+    let content = file.readFileSync(path + '/challenges/c1.json');
+    let contentJson = JSON.parse(content.toString())
+    let data: object[] = [];//preencher arrayh e datah
+
+    for (let S2: number = 0; S2 < contentJson.challenges.length; S2++) {
+        data.push({
+            title: contentJson.challenges[S2].title,
+            problem: contentJson.challenges[S2].problem,
+            id: contentJson.challenges[S2].id,
+            resolved: contentJson.challenges[S2].resolved
+        })
+    }
+    res.json({
+        data: data
+    });
     return;
 }
 export const loadPage = (req: Request, res: Response) => {
-    let { id }= req.params;
-
-    let challenges = data.challenges[parseInt(id) -1];
-
+    let { id } = req.params;
+    let challenges = data.challenges[parseInt(id) - 1];
     let linkBefore;
     let linkAfter;
 
     console.log(process.env.TMP)
     console.log(data.challenges[parseInt(id)]);
-    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id)-1}">Anterior</a>` : '<a></a>'
-    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id)+1}">Próximo</a>` : '<a></a>'
+    linkBefore = data.challenges[parseInt(id) - 2] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id) - 1}">Anterior</a>` : '<a></a>'
+    linkAfter = data.challenges[parseInt(id)] ? `<a style="color: #fff;text-decoration: none;" href="/challenge/${parseInt(id) + 1}">Próximo</a>` : '<a></a>'
 
-    if(!challenges){
+    if (!challenges) {
         res.send('Este número de desafio não existe');
         return;
     }
     console.log('teste');
 
-    let tipsDisplay= "";
-    
-    challenges.tips.forEach((el: string)=>{
-        tipsDisplay +=` 
+    let tipsDisplay = "";
+
+    challenges.tips.forEach((el: string) => {
+        tipsDisplay += ` 
         <div class='secret hidding'>${el}</div>
         <hr>`})
 
-    
+
     let hard = challenges.hard ? '#8C0000' : '#005A8C'
 
-    let styleCSS =  `
+    let styleCSS = `
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -220,7 +236,7 @@ export const loadPage = (req: Request, res: Response) => {
     </style>
 </head>`;
     let htmlPage;
-    if(challenges.resolved){
+    if (challenges.resolved) {
         htmlPage = `
         <header style="background-color: #538a00">
             <h1>${id} - Você resolveu este desafio!</h1>
@@ -279,8 +295,8 @@ export const loadPage = (req: Request, res: Response) => {
     }
 
 
-    let createdHTML = styleCSS + htmlPage 
-   
+    let createdHTML = styleCSS + htmlPage
+
 
 
     res.send(createdHTML);

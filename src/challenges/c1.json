@@ -11,7 +11,7 @@
                 "utilize uma biblioteca chamada dotenv, dentro do arquivo, sete a porta para 3000",
                 "<div>dentro do arquivo .env, que deve ficar na raiz do projeto, ponha:</div><i class='codeTitle'>.env</i><div class='codeHide'>PORT=3000</div><div>no seu server.ts escreva:</div><i class='codeTitle'>server.ts</i><div class='codeHide'> import dotenv from 'dotenv';<br>dotenv.config();<br>server.listen(process.env.PORT);</div>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 2,
@@ -23,7 +23,7 @@
                 "Referencie a pasta node_modules no arquivo criado",
                 "<div>dentro do arquivo .gitignore, que deve ficar na raiz do projeto, ponha:</div><i class='codeTitle'>.gitignore</i><div class='codeHide'>node_modules</div>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 3,
@@ -47,7 +47,7 @@
                 "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, essa segunda são dependencias que ajudam no desenvolvimento do código, mas para o deploy podem ser \"jogadas fora\"",
                 "<div>dentro do arquivo package.json, encontre uma array chamada \"dependencies\". Dentro dessa array temos listadas as dependencias do projeto. logo abaixo temos as devdependencies </div><i class='codeTitle'>package.json</i><div class='codeHide'>\"dependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"express\": \"^4.18.2\"<br>}</div>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 5,
@@ -59,7 +59,7 @@
                 "Essas dependências se encontram o arquivo package.json, na raiz do projeto. Temos dependências normais e as chamadas devdependencies, temos que reposicionar os @types para o seu lugar.",
                 "<div>dentro do arquivo package.json, encontre uma array chamada \"devDependencies\". Dentro dessa array temos listadas as dependencias de desenvolvimento do projeto. Tire a dependência @types/dotenv do dependencies e ponha no devDependencies, ficando assim:</div><i class='codeTitle'>package.json</i><div class='codeHide'>\"devDependencies\":{<br>\"@types/dotenv\": \"^8.2.0\",<br>\"@types/express\": \"^4.17.17\"<br>}</div>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 6,
@@ -75,7 +75,7 @@
                 "<div>dentro do arquivo controllers/ChallengesController.ts, crie uma função como a seguir: </div><i class='codeTitle'>ChallengesController.ts</i><div class='codeHide'>export const listChallenges = (req: Request, res: Response) => {<br>res.json({msg: 'Vai começar a ficar dificil pra C***** isso aqui, melhor correr... mas sem pressão!'})<br>}</div>",
                 "Realize a chamada dele no postman com <i>localhost:3000/listChallenges</i>"
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 7,
@@ -88,7 +88,7 @@
                 "data:[{\"title\":\"tal\", \"problem\":\"problem tal tal\"}]. Seu payload vai ficar assim",
                 "boa sorte, qualquer coisa me chama..."
             ],
-            "resolved": false,
+            "resolved": true,
             "hard": true
         },
         {
@@ -98,7 +98,7 @@
             "tips": [
                 "Clique em controllers e crie o MainController."
             ],
-            "resolved": false
+            "resolved": true
         },
         {
             "id": 9,
@@ -150,6 +150,127 @@
             ],
             "resolved": false
         },
+       
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
+        {
+            "id": 14,
+            "title": "Criando um CRUD",
+            "problem": "Crie uma rota que permite criar novos itens, uma que permite atualizar e outra que permite excluir itens",
+            "tips": [
+                "Utilize POST, PUT, DELETE",
+                "Torne as rotas de atualização dinamicas, sendo possivel atualizar qualquer propriedade de itens que são buscados por uma propriedade que os une.",
+                "Torne as rotas de deleção dinamicas também, sendo possivel deletar varios itens de uma vez baseado em um parametro passado"
+            ],
+            "resolved": false,
+            "hard": true
+        },
         {
             "id": 14,
             "title": "Criando um CRUD",
@@ -164,7 +285,7 @@
         },
         {
             "id": 15,
-            "title": "Criando novas funcionalidades",
+            "title": "fdgsdf",
             "problem": "Crie uma rota que permite a procura de itens com base em alguma propriedade.",
             "tips": [
                 "Utilize query params.",
